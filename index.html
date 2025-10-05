@@ -3,192 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Real Florida Law</title>
-
-  <!-- Modern Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-
+  <title>Jerald Steven Southwell, PA Attorney at Law</title>
   <style>
-    :root {
-      --sage-green: #7A846B; /* pulled from your logo */
-      --black: #000;
-      --white: #fff;
-    }
-
-    body { <div style="text-align:center; margin-top:50px;">
-  <img src="logo.jpeg" alt="Dad's Logo" style="width:400px; height:auto;">
-</div>
-
-
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: var(--white);
-      color: var(--black);
-    }
-
-    /* NAVBAR */
-    .navbar {
-      background: var(--white);
-      border-bottom: 2px solid var(--sage-green);
-      padding: 15px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .navbar .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo-container img { <img src="logo.jpeg" alt="Dad's Logo" style="height:80px;">
-
-      height: 60px;
-      width: auto;
-    }
-
-    .logo-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      color: var(--black);
-      font-weight: 600;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 25px;
+    /* Base styles */
+    body {
       margin: 0;
       padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
     }
 
-    .nav-links a {
+    /* Header with logo */
+    header {
+      background-color: #ffffff;
+      text-align: center;
+      padding: 60px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    img.logo {
+      width: 400px;
+      height: auto;
+    }
+
+    h1 {
+      color: #222;
+      font-size: 2em;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    p.tagline {
+      color: #555;
+      font-size: 1.1em;
+      margin-bottom: 40px;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #004080;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: #fff;
       text-decoration: none;
-      font-weight: 600;
-      color: var(--black);
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1em;
       transition: color 0.3s;
     }
 
-    .nav-links a:hover {
-      color: var(--sage-green);
+    nav a:hover {
+      color: #d9a066; /* subtle accent on hover */
     }
 
-    /* HERO SECTION */
-    .hero {
-      background: var(--sage-green);
-      color: var(--white);
-      padding: 100px 20px;
+    /* Section styles */
+    section {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
       text-align: center;
-    }
-
-    /* SECTION STYLES */
-    .section {
-      display: none;
-      padding: 80px 20px;
-      text-align: center;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .active {
-      display: block;
     }
 
     h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: var(--sage-green);
+      color: #222;
+      margin-bottom: 20px;
+      font-size: 1.8em;
     }
 
     p {
-      font-size: 1.05rem;
-      line-height: 1.6;
+      color: #555;
+      font-size: 1.1em;
+      line-height: 1.6em;
+      margin-bottom: 30px;
     }
 
-    /* FOOTER */
-    .footer {
-      background: var(--black);
-      color: var(--white);
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
+    /* Contact button */
+    a.button {
+      display: inline-block;
+      background-color: #004080;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s;
     }
+
+    a.button:hover {
+      background-color: #002d66;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav class="navbar">
-    <div class="container">
-      <div class="logo-container">
-        <img src="logo.jpeg" alt="Real Florida Law Logo">
-        <span class="logo-text">Real Florida Law</span>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#" onclick="showSection('home')">Home</a></li>
-        <li><a href="#" onclick="showSection('about')">About</a></li>
-        <li><a href="#" onclick="showSection('practice')">Practice Areas</a></li>
-        <li><a href="#" onclick="showSection('contact')">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- HOME -->
-  <header id="home" class="hero section active">
-    <h2>J. Steven Southwell, Attorney at Law</h2>
-    <p>“Down to earth … words that have meaning to me.”</p>
+  <!-- Header with logo -->
+  <header>
+    <img src="logo.jpeg" alt="Jerald Steven Southwell, PA Logo" class="logo">
+    <h1>Jerald Steven Southwell, PA</h1>
+    <p class="tagline">Attorney at Law</p>
   </header>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>
-      I am a Florida native, committed to serving clients with integrity and
-      professionalism. With years of experience, I offer practical legal
-      advice and representation across multiple practice areas.
-    </p>
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#practice">Practice Areas</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Jerald Steven Southwell</h2>
+    <p>Jerald Steven Southwell is a dedicated attorney providing professional legal services with integrity and expertise. With years of experience, he is committed to helping clients navigate complex legal matters efficiently and effectively.</p>
   </section>
 
-  <!-- PRACTICE AREAS -->
-  <section id="practice" class="section">
+  <!-- Practice Areas Section -->
+  <section id="practice">
     <h2>Practice Areas</h2>
-    <p>
-      My firm provides services in:
-    </p>
-    <ul>
-      <li>Land Use & Zoning</li>
-      <li>Environmental Law</li>
-      <li>Real Estate Law</li>
-    </ul>
+    <p>We specialize in a variety of legal areas including business law, estate planning, family law, and civil litigation. Our firm provides personalized attention to ensure each client’s case receives the care it deserves.</p>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p><strong>Phone:</strong> (863) 773-4449</p>
-    <p><strong>Email:</strong> ssouthwell@realfloridalaw.com</p>
-    <p><strong>Address:</strong> 501 W Main Street, Wauchula, FL</p>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>To schedule a consultation or learn more about our services, please get in touch.</p>
+    <a href="mailto:youremail@example.com" class="button">Email Us</a>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2025 J. Steven Southwell. All rights reserved.</p>
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Jerald Steven Southwell, PA. All rights reserved.
   </footer>
-
-  <!-- SCRIPT TO SWITCH SECTIONS -->
-  <script>
-    function showSection(id) {
-      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
-  </script>
 
 </body>
 </html>
