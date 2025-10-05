@@ -1,234 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jerald Steven Southwell, PA - Home</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-  <img src="logo.jpeg" alt="Jerald Steven Southwell Logo" class="logo">
-  <h1>Jerald Steven Southwell, PA</h1>
-  <p class="tagline">Attorney at Law</p>
-</header>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="practice.html">Practice Areas</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<main>
-  <h2>Welcome</h2>
-  <p>Professional legal services with integrity and expertise.</p>
-</main>
-
-<footer>
-  &copy; 2025 Jerald Steven Southwell, PA. All rights reserved.
-</footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - Jerald Steven Southwell, PA</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-  <img src="logo.jpeg" alt="Jerald Steven Southwell Logo" class="logo">
-  <h1>Jerald Steven Southwell, PA</h1>
-  <p class="tagline">Attorney at Law</p>
-</header>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="practice.html">Practice Areas</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<main>
-  <h2>About Jerald Steven Southwell</h2>
-  <p>Jerald Steven Southwell is a dedicated attorney providing professional legal services with integrity and expertise. With years of experience, he is committed to helping clients navigate complex legal matters efficiently and effectively.</p>
-</main>
-
-<footer>
-  &copy; 2025 Jerald Steven Southwell, PA. All rights reserved.
-</footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Practice Areas - Jerald Steven Southwell, PA</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-  <img src="logo.jpeg" alt="Jerald Steven Southwell Logo" class="logo">
-  <h1>Jerald Steven Southwell, PA</h1>
-  <p class="tagline">Attorney at Law</p>
-</header>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="practice.html">Practice Areas</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<main>
-  <h2>Practice Areas</h2>
-  <ul>
-    <li>Business Law</li>
-    <li>Estate Planning</li>
-    <li>Fmily Law</li>
-    <li> Civil Litigation</li>
-  </ul>
-</main>
-
-<footer>
-  &copy; 2025 Jerald Steven Southwell, PA. All rights reserved.
-</footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Jerald Steven Southwell, PA</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-  <img src="logo.jpeg" alt="Jerald Steven Southwell Logo" class="logo">
-  <h1>Jerald Steven Southwell, PA</h1>
-  <p class="tagline">Attorney at Law</p>
-</header>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="practice.html">Practice Areas</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<main>
-  <h2>Contact Us</h2>
-  <p>Email: <a href="mailto:ssouthwell@realfloridalaw.com">ssouthwell@realfloridalaw.com</a></p>
-  <p>Phone: (863) 773-4449</p>
-  <p>Address: 501 W. Main Street, Wauchula, Florida 33873</p>
-  <a href="mailto:ssouthwell@realfloridalaw.com" class="button">Email Us</a>
-</main>
-
-<footer>
-  &copy; 2025 Jerald Steven Southwell, PA. All rights reserved.
-</footer>
-
-</body>
-</html>
-body {
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jerald Steven Southwell, PA Attorney at Law</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+<style>
+/* Reset and basic fonts */
+body, html {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
   color: #333;
+  background-color: #f9f9f9;
 }
 
+/* Hero Header */
 header {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('logo.jpeg') center/cover no-repeat;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 80px 20px;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
+  color: #fff;
 }
 
-img.logo {
-  width: 400px;
-  height: auto;
+header img.logo {
+  width: 200px;
+  max-width: 40%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  margin-bottom: 20px;
 }
 
-h1 {
-  color: #222;
-  margin-top: 20px;
-  margin-bottom: 10px;
+header h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 3em;
+  margin: 0;
 }
 
-p.tagline {
-  color: #555;
-  font-size: 1.1em;
+header p.tagline {
+  font-size: 1.2em;
+  letter-spacing: 1px;
 }
 
+/* Navigation */
 nav {
+  display: flex;
+  justify-content: center;
   background-color: #004080;
-  text-align: center;
-  padding: 10px 0;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav a {
-  color: #ffffff;
-  text-decoration: underline;
-  margin: 0 15px;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 20px;
   font-weight: bold;
+  font-size: 1em;
+  transition: all 0.3s ease;
 }
 
 nav a:hover {
   color: #d9a066;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
-main {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 0 20px;
+/* Sections */
+section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 40px 20px;
   text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+section:nth-child(even) {
+  background-color: #f4f4f4;
 }
 
 h2 {
-  color: #222;
+  font-family: 'Merriweather', serif;
+  font-size: 2em;
   margin-bottom: 20px;
-  font-size: 1.8em;
 }
 
 p, ul {
-  color: #555;
   font-size: 1.1em;
-  line-height: 1.6em;
-  margin-bottom: 30px;
+  line-height: 1.8em;
+  color: #555;
 }
 
+ul li {
+  margin: 10px 0;
+}
+
+/* Button */
 a.button {
   display: inline-block;
   background-color: #004080;
   color: #fff;
   text-decoration: none;
-  padding: 12px 25px;
+  padding: 14px 30px;
   border-radius: 5px;
   font-weight: bold;
+  transition: all 0.3s ease;
+  margin-top: 20px;
 }
 
 a.button:hover {
   background-color: #002d66;
 }
 
+/* Footer */
 footer {
   background-color: #222;
   color: #fff;
   text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
+  padding: 25px 0;
   font-size: 0.9em;
+  margin-top: 60px;
 }
+</style>
+</head>
+<body>
+
+<!-- Hero / Welcome -->
+<header>
+  <img src="logo.jpeg" alt="Jerald Steven Southwell Logo" class="logo">
+  <h1>Jerald Steven Southwell, PA</h1>
+  <p class="tagline">Attorney at Law</p>
+</header>
+
+<!-- Navigation -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="practice.html">Practice Areas</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- Main Sections -->
+<section>
+  <h2>Welcome</h2>
+  <p>Providing professional legal services with integrity and expertise. Your trusted attorney for business, estate, family, and civil law matters.</p>
+</section>
+
+<footer>
+  &copy; 2025 Jerald Steven Southwell, PA. All rights reserved.
+</footer>
+
+</body>
+</html>
