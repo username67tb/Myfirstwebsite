@@ -12,6 +12,7 @@
       font-family: Arial, sans-serif;
       background-color: #f7f7f7;
       color: #333;
+      scroll-behavior: smooth; /* smooth scrolling */
     }
 
     /* Header with logo */
@@ -40,11 +41,14 @@
       margin-bottom: 40px;
     }
 
-    /* Navigation */
+    /* Navigation bar */
     nav {
       background-color: #004080;
       text-align: center;
       padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     nav a {
@@ -57,7 +61,7 @@
     }
 
     nav a:hover {
-      color: #d9a066; /* subtle accent on hover */
+      color: #d9a066;
     }
 
     /* Section styles */
@@ -74,7 +78,7 @@
       font-size: 1.8em;
     }
 
-    p {
+    p, ul {
       color: #555;
       font-size: 1.1em;
       line-height: 1.6em;
@@ -106,14 +110,13 @@
       margin-top: 40px;
       font-size: 0.9em;
     }
-
   </style>
 </head>
 <body>
 
   <!-- Header with logo -->
   <header>
-    <img src="logo.jpeg" alt="Jerald Steven Southwell, PA Logo" class="logo">
+    <img src="logo.jpeg" alt="Jerald Steven Southwell Logo" class="logo">
     <h1>Jerald Steven Southwell, PA</h1>
     <p class="tagline">Attorney at Law</p>
   </header>
@@ -134,13 +137,20 @@
   <!-- Practice Areas Section -->
   <section id="practice">
     <h2>Practice Areas</h2>
-    <p>We specialize in a variety of legal areas including business law, estate planning, family law, and civil litigation. Our firm provides personalized attention to ensure each client’s case receives the care it deserves.</p>
+    <ul>
+      <li>Business Law</li>
+      <li>Estate Planning</li>
+      <li>Family Law</li>
+      <li>Civil Litigation</li>
+    </ul>
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>To schedule a consultation or learn more about our services, please get in touch.</p>
+    <p>To schedule a consultation or learn more about our services, please reach out:</p>
+    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+    <p>Phone: (123) 456-7890</p>
     <a href="mailto:youremail@example.com" class="button">Email Us</a>
   </section>
 
