@@ -4,87 +4,126 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Real Florida Law</title>
+
+  <!-- Modern Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --sage-green: #7A846B; /* pulled from your logo */
+      --black: #000;
+      --white: #fff;
+    }
+
     body {
       margin: 0;
-      font-family: Lobster, sans-serif;
-      background: #fdfdfd;
-      color: #333;
+      font-family: 'Open Sans', sans-serif;
+      background: var(--white);
+      color: var(--black);
     }
+
+    /* NAVBAR */
     .navbar {
-      background: #3b4d2d; /* dusty green */
-      color: white ;
+      background: var(--white);
+      border-bottom: 2px solid var(--sage-green);
       padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
+
     .navbar .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 10px; /* space between image and text */
+      gap: 10px;
     }
+
     .logo-container img {
-      height: 40px; /* adjust size */
+      height: 60px;
       width: auto;
-      border-radius: 5px; /* rounded corners */
     }
+
     .logo-text {
+      font-family: 'Playfair Display', serif;
       font-size: 20px;
-      font-weight: bold;
+      color: var(--black);
+      font-weight: 600;
     }
+
     .nav-links {
       list-style: none;
       display: flex;
-      gap: 20px;
+      gap: 25px;
       margin: 0;
       padding: 0;
     }
+
     .nav-links a {
-      color: white ;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      color: var(--black);
+      transition: color 0.3s;
     }
+
+    .nav-links a:hover {
+      color: var(--sage-green);
+    }
+
+    /* HERO SECTION */
     .hero {
-      background: #556b2f; /* darker green */
-      color: white;
+      background: var(--sage-green);
+      color: var(--white);
       padding: 100px 20px;
       text-align: center;
     }
+
+    /* SECTION STYLES */
     .section {
       display: none;
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
+      max-width: 800px;
+      margin: auto;
     }
+
     .active {
       display: block;
     }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--sage-green);
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
     .footer {
-      background: #3b4d2d;
-      color: green ;
+      background: var(--black);
+      color: var(--white);
       text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    ul li {
-      margin: 8px 0;
+      padding: 20px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- NAVIGATION -->
   <nav class="navbar">
     <div class="container">
       <div class="logo-container">
-        <!-- Replace 'logo.png' with your actual file -->
-        <img src="logo.png" alt="Real Florida Law Logo">
+        <img src="logo.jpeg" alt="Real Florida Law Logo">
         <span class="logo-text">Real Florida Law</span>
       </div>
       <ul class="nav-links">
@@ -96,56 +135,49 @@
     </div>
   </nav>
 
-  <!-- Home -->
+  <!-- HOME -->
   <header id="home" class="hero section active">
-    <div class="hero-text">
-      <h2>J. Steven Southwell, Attorney at Law</h2>
-      <p>“Down to earth … words that have meaning to me.”</p>
-    </div>
+    <h2>J. Steven Southwell, Attorney at Law</h2>
+    <p>“Down to earth … words that have meaning to me.”</p>
   </header>
 
-  <!-- About -->
+  <!-- ABOUT -->
   <section id="about" class="section">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
-        I am a Florida native, committed to serving clients with integrity and
-        professionalism. With years of experience, I offer practical legal
-        advice and representation across multiple practice areas.
-      </p>
-    </div>
+    <h2>About Me</h2>
+    <p>
+      I am a Florida native, committed to serving clients with integrity and
+      professionalism. With years of experience, I offer practical legal
+      advice and representation across multiple practice areas.
+    </p>
   </section>
 
-  <!-- Practice Areas -->
+  <!-- PRACTICE AREAS -->
   <section id="practice" class="section">
-    <div class="container">
-      <h2>Practice Areas</h2>
-      <ul>
-        <li>Land Use & Zoning</li>
-        <li>Environmental Law</li>
-        <li>Real Estate Law</li>
-      </ul>
-    </div>
+    <h2>Practice Areas</h2>
+    <p>
+      My firm provides services in:
+    </p>
+    <ul>
+      <li>Land Use & Zoning</li>
+      <li>Environmental Law</li>
+      <li>Real Estate Law</li>
+    </ul>
   </section>
 
-  <!-- Contact -->
+  <!-- CONTACT -->
   <section id="contact" class="section">
-    <div class="container">
-      <h2>Contact</h2>
-      <p><strong>Phone:</strong> (863) 773-4449 (Office) </p>
-      <p><strong>Email:</strong> ssouthwell@realfloridalaw.com</p>
-      <p><strong>Address:</strong> 501 W Main Street, Wauchula, FL</p>
-    </div>
+    <h2>Contact</h2>
+    <p><strong>Phone:</strong> (863) 773-4449</p>
+    <p><strong>Email:</strong> ssouthwell@realfloridalaw.com</p>
+    <p><strong>Address:</strong> 501 W Main Street, Wauchula, FL</p>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
-      <p>© 2025 J. Steven Southwell. All rights reserved.</p>
-    </div>
+    <p>© 2025 J. Steven Southwell. All rights reserved.</p>
   </footer>
 
-  <!-- Script to switch sections -->
+  <!-- SCRIPT TO SWITCH SECTIONS -->
   <script>
     function showSection(id) {
       document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
