@@ -3,9 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jerald Steven Southwell, PA - Home</title>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<title>Jerald Steven Southwell, PA - Attorney at Law</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap');
+
+/* Reset & Base */
+body, html { margin:0; padding:0; font-family:'Open Sans', sans-serif; scroll-behavior: smooth; line-height:1.7; color:#333; background:#f9f9f9; }
+
+/* Header / Hero */
+header {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('logo.jpeg') center/cover no-repeat;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+header img.logo { width: 250px; max-width: 35%; box-shadow:0 20px 50px rgba(0,0,0,0.7); margin-bottom: 25px; border-radius:12px; }
+header h1 { font-family:'Merriweather', serif; font-size:3.5em; margin:0; }
+header p.tagline { font-size:1.5em; letter-spacing:1px; margin-top:12px; }
+
+/* Navigation */
+nav {
+  display:flex;
+  justify-content:center;
+  background:#004080;
+  padding:18px 0;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 3px 8px rgba(0,0,0,0.15);
+}
+nav a {
+  color:#fff;
+  text-decoration:none;
+  margin:0 25px;
+  font-weight:bold;
+  font-size:1.1em;
+  transition:0.3s;
+}
+nav a:hover { color:#d9a066; text-decoration:underline; }
+
+/* Sections */
+section { max-width:1100px; margin:80px auto; padding:50px 30px; text-align:center; border-radius:12px; box-shadow:0 6px 25px rgba(0,0,0,0.07); background:#fff; }
+section:nth-of-type(even){ background:#f4f4f4; }
+h2 { font-family:'Merriweather', serif; font-size:2.5em; margin-bottom:25px; color:#004080; }
+
+/* Paragraphs & Lists */
+p { font-size:1.2em; color:#555; margin-bottom:25px; }
+ul { text-align:left; max-width:600px; margin:0 auto 25px auto; }
+ul li { margin:12px 0; font-size:1.15em; }
+
+/* Buttons */
+a.button { display:inline-block; background:#004080; color:#fff; text-decoration:none; padding:16px 35px; border-radius:6px; font-weight:bold; margin-top:25px; transition:0.3s; }
+a.button:hover { background:#002d66; }
+
+/* Footer */
+footer { background:#222; color:#fff; text-align:center; padding:30px 0; margin-top:60px; font-size:0.95em; }
+
+/* Responsive */
+@media(max-width:768px){ header h1{font-size:2.5em;} header p.tagline{font-size:1.2em;} nav a{margin:0 12px; font-size:1em;} section{padding:40px 20px;} }
+</style>
 </head>
 <body>
 
@@ -16,15 +76,41 @@
 </header>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="practice.html">Practice Areas</a>
-  <a href="contact.html">Contact</a>
+  <a href="#welcome">Home</a>
+  <a href="#about">About</a>
+  <a href="#practice">Practice Areas</a>
+  <a href="#contact">Contact</a>
 </nav>
 
-<section>
+<section id="welcome">
   <h2>Welcome</h2>
-  <p>Providing professional legal services with integrity and expertise. Your trusted attorney for business, estate, family, and civil law matters.</p>
+  <p>At Jerald Steven Southwell, PA, we provide professional legal services with integrity, expertise, and dedication. Whether you are dealing with business matters, estate planning, family issues, or civil litigation, we are here to guide you every step of the way.</p>
+  <p>Our goal is to ensure you receive top-quality legal counsel and representation tailored to your specific needs.</p>
+</section>
+
+<section id="about">
+  <h2>About Jerald Steven Southwell</h2>
+  <p>Jerald Steven Southwell is a seasoned attorney committed to providing exceptional legal services. With extensive experience across multiple areas of law, Jerald prioritizes clear communication, strategic solutions, and professional integrity in every case.</p>
+  <p>Our firm is client-focused, taking the time to understand your unique circumstances and goals, ensuring that every legal strategy is thoughtfully tailored for the best possible outcome.</p>
+</section>
+
+<section id="practice">
+  <h2>Practice Areas</h2>
+  <ul>
+    <li>Business Law – Contracts, corporate structuring, and compliance.</li>
+    <li>Estate Planning – Wills, trusts, and estate administration.</li>
+    <li>Family Law – Divorce, child custody, and support matters.</li>
+    <li>Civil Litigation – Representation in civil disputes and claims.</li>
+  </ul>
+  <a href="#contact" class="button">Schedule a Consultation</a>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:ssouthwell@realfloridalaw.com">ssouthwell@realfloridalaw.com</a></p>
+  <p>Phone: (863) 773-4449</p>
+  <p>Address: 502 W. Main Street, Wauchula, Florida 33873</p>
+  <a href="mailto:ssouthwell@realfloridalaw.com" class="button">Email Us</a>
 </section>
 
 <footer>
@@ -33,20 +119,3 @@
 
 </body>
 </html>
-body, html { margin:0; padding:0; font-family: 'Open Sans', sans-serif; color:#333; background:#f9f9f9; }
-header { text-align:center; padding:80px 20px; background:#004080; color:#fff; }
-header img.logo { width:200px; height:auto; margin-bottom:20px; }
-header h1 { font-family:'Merriweather', serif; font-size:2.5em; margin:0; }
-header p.tagline { font-size:1.2em; margin-top:10px; }
-
-nav { text-align:center; background:#002d66; padding:15px 0; }
-nav a { color:#fff; text-decoration:none; margin:0 20px; font-weight:bold; }
-nav a:hover { color:#d9a066; text-decoration:underline; }
-
-section { max-width:900px; margin:50px auto; padding:20px; background:#fff; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.05); text-align:center; }
-section:nth-child(even){background:#f4f4f4;}
-h2{font-family:'Merriweather', serif; font-size:2em; margin-bottom:20px;}
-p,ul{font-size:1.1em; line-height:1.6em; color:#555;}
-
-footer { background:#222; color:#fff; text-align:center; padding:20px 0; margin-top:40px; font-size:0.9em; }
-
