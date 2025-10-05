@@ -21,7 +21,17 @@
       justify-content: space-between;
       align-items: center;
     }
-    .navbar .logo {
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px; /* space between image and text */
+    }
+    .logo-container img {
+      height: 40px; /* adjust size */
+      width: auto;
+      border-radius: 5px; /* rounded corners */
+    }
+    .logo-text {
       font-size: 20px;
       font-weight: bold;
     }
@@ -44,12 +54,12 @@
       text-align: center;
     }
     .section {
-      display: none; /* hide by default */
+      display: none;
       padding: 60px 20px;
       text-align: center;
     }
     .active {
-      display: block; /* show active */
+      display: block;
     }
     .footer {
       background: #3b4d2d;
@@ -72,7 +82,11 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="container">
-      <h1 class="logo">Real Florida Law</h1>
+      <div class="logo-container">
+        <!-- Replace 'logo.png' with your actual file -->
+        <img src="logo.png" alt="Real Florida Law Logo">
+        <span class="logo-text">Real Florida Law</span>
+      </div>
       <ul class="nav-links">
         <li><a href="#" onclick="showSection('home')">Home</a></li>
         <li><a href="#" onclick="showSection('about')">About</a></li>
