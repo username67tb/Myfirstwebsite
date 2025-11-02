@@ -1,96 +1,159 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap');
+import React from "react";
 
-body, html { margin:0; padding:0; font-family:'Open Sans', sans-serif; line-height:1.7; color:#333; background:#f9f9f9; }
-img { max-width:100%; height:auto; display:block; border-radius:6px; }
+// Attorney Website - Single-file React component (Tailwind CSS required)
+// Usage: place this file in your React app (e.g. src/App.jsx).
+// Tailwind must be configured in your project. Put your logo at /public/logo.png
 
-header {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('logo.jpeg') center/cover no-repeat fixed;
-  height: 500px;
-  display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:#fff; overflow:hidden;
+export default function AttorneySite() {
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-900 antialiased">
+      <header className="bg-gradient-to-r from-[#4B5D3A] to-[#2F3D2B] text-white">
+        <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <img src="/logo.png" alt="Firm logo" className="h-12 w-auto object-contain" />
+            <div>
+              <h1 className="text-xl font-semibold">Southwell Law — Real Estate Counsel</h1>
+              <p className="text-sm opacity-90">Practical. Professional. Proven.</p>
+            </div>
+          </div>
+          <nav className="hidden md:flex gap-6 text-sm">
+            <a href="#about" className="hover:underline">About</a>
+            <a href="#services" className="hover:underline">Services</a>
+            <a href="#testimonials" className="hover:underline">Testimonials</a>
+            <a href="#contact" className="hover:underline">Contact</a>
+          </nav>
+          <a href="#contact" className="ml-4 inline-block bg-amber-400 text-[#2F3D2B] px-4 py-2 rounded-md text-sm font-medium shadow">Get In Touch</a>
+        </div>
+      </header>
+
+      <main className="max-w-6xl mx-auto px-6 py-12">
+        {/* Hero */}
+        <section className="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight">Expert Real Estate Counsel for Individuals & Businesses</h2>
+            <p className="mt-4 text-gray-700">Buy-sell transactions, title issues, landlord-tenant disputes, contracts, closings — we guide clients through complex real estate matters with clarity and integrity.</p>
+
+            <ul className="mt-6 space-y-3">
+              <li className="flex items-start gap-3">
+                <span className="inline-block bg-[#4B5D3A] text-white rounded-full px-3 py-1 text-xs">01</span>
+                <span className="text-sm">Personalized strategy for every transaction</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="inline-block bg-[#4B5D3A] text-white rounded-full px-3 py-1 text-xs">02</span>
+                <span className="text-sm">Clear fee structure — no surprises</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="inline-block bg-[#4B5D3A] text-white rounded-full px-3 py-1 text-xs">03</span>
+                <span className="text-sm">Responsive communication, practical results</span>
+              </li>
+            </ul>
+
+            <div className="mt-6 flex gap-4">
+              <a href="#contact" className="inline-block bg-[#4B5D3A] text-white px-5 py-3 rounded-md font-semibold">Schedule a Consultation</a>
+              <a href="#services" className="inline-block border border-gray-300 px-5 py-3 rounded-md text-sm">Our Services</a>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow p-6">
+            <h3 className="text-lg font-medium">Quick Intake</h3>
+            <p className="text-sm text-gray-600 mt-2">Fill out the details and we will reach out to set a time.</p>
+            <form className="mt-4 space-y-3" onSubmit={(e) => { e.preventDefault(); window.location.href = 'mailto:youremail@example.com?subject=Website%20Consultation'; }}>
+              <input className="w-full border border-gray-200 rounded px-3 py-2" placeholder="Full name" required />
+              <input className="w-full border border-gray-200 rounded px-3 py-2" placeholder="Phone or preferred contact" />
+              <input className="w-full border border-gray-200 rounded px-3 py-2" placeholder="Email" type="email" required />
+              <textarea className="w-full border border-gray-200 rounded px-3 py-2" placeholder="Brief description of your matter" rows={4}></textarea>
+              <div className="flex gap-3">
+                <button className="bg-[#4B5D3A] text-white px-4 py-2 rounded">Send</button>
+                <button type="button" className="border border-gray-300 px-4 py-2 rounded" onClick={() => window.open('mailto:youremail@example.com')}>Email Instead</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        {/* About */}
+        <section id="about" className="mt-14 bg-white rounded-lg shadow p-8">
+          <h3 className="text-2xl font-semibold">About Southwell Law</h3>
+          <p className="mt-3 text-gray-700">With decades of combined experience in real estate law, Southwell Law advises buyers, sellers, landlords, tenants, lenders, and developers. We focus on minimizing risk, closing deals efficiently, and protecting your interests at every step.</p>
+
+          <div className="mt-6 grid md:grid-cols-3 gap-4">
+            <div className="p-4 border border-gray-100 rounded">
+              <h4 className="font-semibold">Residential Transactions</h4>
+              <p className="text-sm text-gray-600 mt-1">Closings, title review, contract negotiation.</p>
+            </div>
+            <div className="p-4 border border-gray-100 rounded">
+              <h4 className="font-semibold">Commercial Real Estate</h4>
+              <p className="text-sm text-gray-600 mt-1">Leases, purchase agreements, due diligence.</p>
+            </div>
+            <div className="p-4 border border-gray-100 rounded">
+              <h4 className="font-semibold">Litigation & Disputes</h4>
+              <p className="text-sm text-gray-600 mt-1">Boundary, title defects, landlord-tenant conflicts.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Services */}
+        <section id="services" className="mt-10">
+          <h3 className="text-xl font-semibold">Services</h3>
+          <div className="mt-4 grid md:grid-cols-2 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h4 className="font-semibold">Purchases & Sales</h4>
+              <p className="text-sm text-gray-600 mt-2">Contract drafting and review, negotiation, closing coordination, title review.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h4 className="font-semibold">Title & Escrow</h4>
+              <p className="text-sm text-gray-600 mt-2">Title searches, cure, insurance recommendations, escrow coordination.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h4 className="font-semibold">Lease Drafting & Review</h4>
+              <p className="text-sm text-gray-600 mt-2">Commercial and residential lease agreements.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h4 className="font-semibold">Dispute Resolution</h4>
+              <p className="text-sm text-gray-600 mt-2">Mediation, negotiation, litigation support.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section id="testimonials" className="mt-10">
+          <h3 className="text-xl font-semibold">What Clients Say</h3>
+          <div className="mt-4 grid md:grid-cols-3 gap-4">
+            <blockquote className="bg-white p-4 rounded shadow">“Professional and straightforward — made closing painless.”</blockquote>
+            <blockquote className="bg-white p-4 rounded shadow">“Saved us time and money on a tricky commercial lease.”</blockquote>
+            <blockquote className="bg-white p-4 rounded shadow">“Responsive and clear communication throughout.”</blockquote>
+          </div>
+        </section>
+
+        {/* Contact */}
+        <section id="contact" className="mt-10 bg-white rounded-lg shadow p-8">
+          <h3 className="text-2xl font-semibold">Contact</h3>
+          <p className="text-sm text-gray-600 mt-2">Call or email to schedule a consultation.</p>
+
+          <div className="mt-6 grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="font-semibold">Office</h4>
+              <p className="text-sm text-gray-700">123 Main Street<br/>Wauchula, FL 33873</p>
+              <p className="mt-3 text-sm">Phone: (555) 555-5555<br/>Email: <a href="mailto:youremail@example.com" className="text-[#4B5D3A] underline">youremail@example.com</a></p>
+            </div>
+            <div>
+              <h4 className="font-semibold">Hours</h4>
+              <p className="text-sm text-gray-700">Mon — Fri: 9:00 AM — 5:00 PM<br/>By appointment evenings/weekends</p>
+
+              <div className="mt-4">
+                <iframe title="map" src="https://www.google.com/maps?q=Wauchula,+FL&output=embed" className="w-full h-44 rounded border-0" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="bg-[#2F3D2B] text-gray-200 py-6 mt-12">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-sm">© {new Date().getFullYear()} Southwell Law. All rights reserved.</div>
+          <div className="text-sm">Licensed in Florida • Privacy Policy</div>
+        </div>
+      </footer>
+    </div>
+  );
 }
-header img.logo { width:250px; max-width:35%; margin-bottom:20px; box-shadow:0 15px 40px rgba(0,0,0,0.6); transition: transform 1s ease; }
-header h1 { font-family:'Merriweather', serif; font-size:3em; margin:0; opacity:0; animation:fadeIn 1s forwards 0.5s; }
-header p.tagline { font-size:1.3em; margin-top:10px; opacity:0; animation:fadeIn 1s forwards 0.8s; }
 
-nav {
-  display:flex; justify-content:center; background:#004080; padding:18px 0; box-shadow:0 3px 8px rgba(0,0,0,0.15);
-}
-nav a { color:#fff; text-decoration:none; margin:0 25px; font-weight:bold; font-size:1.1em; transition:0.3s; }
-nav a:hover { color:#d9a066; text-decoration:underline; }
-
-section {
-  max-width:1100px; margin:80px auto; padding:50px 30px; text-align:center; border-radius:12px; box-shadow:0 6px 25px rgba(0,0,0,0.07);
-  background:#fff; opacity:0; transform:translateY(30px); transition:all 1s ease-out;
-}
-section.visible { opacity:1; transform:translateY(0);}
-section:nth-of-type(even){ background:#f4f4f4; }
-
-h2 { font-family:'Merriweather', serif; font-size:2.5em; margin-bottom:25px; color:#004080; }
-p { font-size:1.2em; color:#555; margin-bottom:25px; }
-ul { text-align:left; max-width:600px; margin:0 auto 25px auto; }
-ul li { margin:12px 0; font-size:1.15em; }
-
-a.button { display:inline-block; background:#004080; color:#fff; text-decoration:none; padding:16px 35px; border-radius:6px; font-weight:bold; margin-top:25px; transition:0.3s; }
-a.button:hover { background:#002d66; }
-
-footer { background:#222; color:#fff; text-align:center; padding:30px 0; margin-top:60px; font-size:0.95em; }
-
-@keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
-
-@media(max-width:768px){
-  header h1{font-size:2.5em;} 
-  header p.tagline{font-size:1.2em;} 
-  nav a{margin:0 12px; font-size:1em;} 
-  section{padding:40px 20px;}
-}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jerald Steven Southwell, PA - Home</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-  <img src="logo.jpeg" alt="Jerald Steven Southwell Logo" class="logo">
-  <h1>Jerald Steven Southwell, PA</h1>
-  <p>Attorney at Law</p>
-</header>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="practice.html">Practice Areas</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<section>
-  <h2>Welcome</h2>
-  <p>Providing professional legal services with integrity and expertise. Your trusted attorney for business, estate, family, and civil law matters.</p>
-  <p>We ensure you receive top-quality legal counsel tailored to your specific needs.</p>
-</section>
-
-<footer>
-  &copy; 2025 Jerald Steven Southwell, PA. All rights reserved.
-</footer>
-
-<script>
-const sections = document.querySelectorAll('section');
-const observer = new IntersectionObserver((entries, obs) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){ entry.target.classList.add('visible'); obs.unobserve(entry.target); }
-  });
-},{threshold:0.1});
-sections.forEach(section => observer.observe(section));
-
-window.addEventListener('scroll', () => {
-  const scroll = window.scrollY;
-  const headerImg = document.querySelector('header img.logo');
-  headerImg.style.transform = 'translateY(' + scroll*0.3 + 'px)';
-});
-</script>
-
-</body>
-</html>
