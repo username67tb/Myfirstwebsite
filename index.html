@@ -1,155 +1,270 @@
+npm create vite@latest .    # choose React
+npm install
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+npm run dev
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        'brand-green': '#2F3D2B',    // deep army green
+        'brand-olive': '#4B5D3A',    // lighter olive
+        'brand-pale': '#E6EEDD',     // pale background
+        'brand-gold': '#D4B483',     // warm gold
+      },
+      fontFamily: {
+        serif: ['"Playfair Display"', 'serif'],
+        sans: ['Lato', 'Inter', 'sans-serif'],
+      },
+      boxShadow: {
+        'soft': '0 8px 24px rgba(47,61,43,0.12)',
+      },
+      borderRadius: {
+        'xl-soft': '1rem',
+      },
+      spacing: {
+        '18': '4.5rem',
+      },
+      keyframes: {
+        'fade-up': {
+          '0%': { opacity: '0', transform: 'translateY(12px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        }
+      },
+      animation: {
+        'fade-up-slow': 'fade-up 700ms ease-out both'
+      }
+    }
+  },
+  plugins: [],
+};
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base typographic tuning */
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-white text-gray-800;
+  font-family: 'Lato', Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings use Playfair Display */
+h1,h2,h3,h4 {
+  font-family: 'Playfair Display', serif;
+  color: #0f1720;
+  letter-spacing: -0.01em;
+}
+
+/* Logo circle mask helper (if you keep round logo) */
+.logo-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 9999px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, rgba(74,92,58,0.06), rgba(47,61,43,0.03));
+  border: 2px solid rgba(47,61,43,0.06);
+}
+
+/* subtle gold underline used in headings */
+.heading-underline {
+  display: inline-block;
+  padding-bottom: 0.25rem;
+  background-image: linear-gradient(90deg, rgba(212,180,131,0.95), rgba(212,180,131,0.95));
+  background-repeat: no-repeat;
+  background-size: 100% 4px;
+  background-position: 0 100%;
+}
+
+/* fancy button */
+.btn-gold {
+  background: linear-gradient(180deg, rgba(212,180,131,1), rgba(196,162,110,1));
+  color: #142017;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  box-shadow: 0 6px 18px rgba(212,180,131,0.16);
+}
+
+/* fade-up helper */
+.fade-up { animation: fade-up 700ms ease-out both; }
+
+@media (min-width: 768px) {
+  .logo-circle { width: 160px; height: 160px; }
+}
 import React from "react";
 
-// Attorney Website - Single-file React component (Tailwind CSS required)
-// Usage: place this file in your React app (e.g. src/App.jsx).
-// Tailwind must be configured in your project. Put your logo at /public/logo.png
-
-export default function AttorneySite() {
+export default function App() {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 antialiased">
-      <header className="bg-gradient-to-r from-[#4B5D3A] to-[#2F3D2B] text-white">
-        <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+    <div className="min-h-screen bg-white">
+      {/* NAV */}
+      <header className="w-full border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <img src="/logo.png" alt="Firm logo" className="h-12 w-auto object-contain" />
+            <div className="logo-circle">
+              <img src="/logo.png" alt="Southwell Law logo" className="max-h-24 object-contain" />
+            </div>
             <div>
-              <h1 className="text-xl font-semibold">Southwell Law — Real Estate Counsel</h1>
-              <p className="text-sm opacity-90">Practical. Professional. Proven.</p>
+              <div className="text-sm text-gray-600">J. Steven Southwell, P.A.</div>
+              <div className="text-xl font-serif text-gray-900">Real Estate Counsel</div>
             </div>
           </div>
-          <nav className="hidden md:flex gap-6 text-sm">
-            <a href="#about" className="hover:underline">About</a>
-            <a href="#services" className="hover:underline">Services</a>
-            <a href="#testimonials" className="hover:underline">Testimonials</a>
-            <a href="#contact" className="hover:underline">Contact</a>
+
+          <nav className="hidden md:flex items-center gap-6 text-sm text-gray-700">
+            <a href="#about" className="hover:text-gray-900">About</a>
+            <a href="#services" className="hover:text-gray-900">Services</a>
+            <a href="#testimonials" className="hover:text-gray-900">Testimonials</a>
+            <a href="#contact" className="hover:text-gray-900">Contact</a>
           </nav>
-          <a href="#contact" className="ml-4 inline-block bg-amber-400 text-[#2F3D2B] px-4 py-2 rounded-md text-sm font-medium shadow">Get In Touch</a>
+
+          <div className="hidden md:block">
+            <a href="#contact" className="btn-gold">Schedule Consultation</a>
+          </div>
+
+          {/* mobile menu CTA */}
+          <div className="md:hidden">
+            <a href="#contact" className="inline-block bg-brand-olive text-white px-3 py-2 rounded-md text-sm">Contact</a>
+          </div>
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-6 py-12">
-        {/* Hero */}
-        <section className="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight">Expert Real Estate Counsel for Individuals & Businesses</h2>
-            <p className="mt-4 text-gray-700">Buy-sell transactions, title issues, landlord-tenant disputes, contracts, closings — we guide clients through complex real estate matters with clarity and integrity.</p>
+      {/* HERO */}
+      <main className="max-w-6xl mx-auto px-6 py-14">
+        <section className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6">
+            <h1 className="text-4xl md:text-5xl font-serif leading-tight text-gray-900 fade-up" style={{animationDelay: '80ms'}}>
+              Trusted Real Estate Counsel <span className="heading-underline">for Savvy Buyers & Developers</span>
+            </h1>
+            <p className="text-gray-600 max-w-xl fade-up" style={{animationDelay: '160ms'}}>
+              We advise on purchases, leases, title matters, and disputes with clarity and a focus on protecting your investment — practical legal guidance without the jargon.
+            </p>
 
-            <ul className="mt-6 space-y-3">
-              <li className="flex items-start gap-3">
-                <span className="inline-block bg-[#4B5D3A] text-white rounded-full px-3 py-1 text-xs">01</span>
-                <span className="text-sm">Personalized strategy for every transaction</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="inline-block bg-[#4B5D3A] text-white rounded-full px-3 py-1 text-xs">02</span>
-                <span className="text-sm">Clear fee structure — no surprises</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="inline-block bg-[#4B5D3A] text-white rounded-full px-3 py-1 text-xs">03</span>
-                <span className="text-sm">Responsive communication, practical results</span>
-              </li>
-            </ul>
+            <div className="flex gap-4 items-center fade-up" style={{animationDelay: '240ms'}}>
+              <a href="#contact" className="btn-gold shadow">Request Consultation</a>
+              <a href="#services" className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-gray-200 text-sm text-gray-700 hover:shadow-sm">Our Services</a>
+            </div>
 
-            <div className="mt-6 flex gap-4">
-              <a href="#contact" className="inline-block bg-[#4B5D3A] text-white px-5 py-3 rounded-md font-semibold">Schedule a Consultation</a>
-              <a href="#services" className="inline-block border border-gray-300 px-5 py-3 rounded-md text-sm">Our Services</a>
+            <div className="mt-6 grid grid-cols-3 gap-3 text-xs text-gray-600">
+              <div className="py-3 px-3 rounded-md bg-gray-50 shadow-sm">
+                <div className="font-semibold text-sm text-gray-900">Experience</div>
+                <div className="mt-1">Decades in Florida real estate law</div>
+              </div>
+              <div className="py-3 px-3 rounded-md bg-gray-50 shadow-sm">
+                <div className="font-semibold text-sm text-gray-900">Clarity</div>
+                <div className="mt-1">Transparent fees & process</div>
+              </div>
+              <div className="py-3 px-3 rounded-md bg-gray-50 shadow-sm">
+                <div className="font-semibold text-sm text-gray-900">Results</div>
+                <div className="mt-1">Efficient closings & dispute resolution</div>
+              </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow p-6">
-            <h3 className="text-lg font-medium">Quick Intake</h3>
-            <p className="text-sm text-gray-600 mt-2">Fill out the details and we will reach out to set a time.</p>
-            <form className="mt-4 space-y-3" onSubmit={(e) => { e.preventDefault(); window.location.href = 'mailto:youremail@example.com?subject=Website%20Consultation'; }}>
+          {/* Card with contact + logo accent */}
+          <aside className="bg-white rounded-xl-soft shadow-soft p-8 border border-gray-100">
+            <div className="flex items-center gap-4">
+              <div className="logo-circle">
+                <img src="/logo.png" alt="logo" className="max-h-20 object-contain" />
+              </div>
+              <div>
+                <div className="text-sm text-gray-600">Office</div>
+                <div className="font-semibold text-gray-900">123 Main Street, Wauchula, FL</div>
+                <div className="text-sm text-gray-600 mt-2">Phone: (555) 555-5555</div>
+                <div className="text-sm text-gray-600">Email: <a href="mailto:youremail@example.com" className="text-brand-green underline">youremail@example.com</a></div>
+              </div>
+            </div>
+
+            <hr className="my-6 border-gray-100" />
+
+            <h4 className="font-semibold text-gray-900">Quick Intake</h4>
+            <p className="text-sm text-gray-600 mt-2">Briefly describe your matter and preferred contact method.</p>
+
+            {/* Front-end form — replace action with Formspree/Netlify/etc if desired */}
+            <form className="mt-4 space-y-3" onSubmit={(e) => { e.preventDefault(); window.location.href = 'mailto:youremail@example.com?subject=Consultation&body=Please include your name, phone, and brief details.'; }}>
               <input className="w-full border border-gray-200 rounded px-3 py-2" placeholder="Full name" required />
               <input className="w-full border border-gray-200 rounded px-3 py-2" placeholder="Phone or preferred contact" />
               <input className="w-full border border-gray-200 rounded px-3 py-2" placeholder="Email" type="email" required />
-              <textarea className="w-full border border-gray-200 rounded px-3 py-2" placeholder="Brief description of your matter" rows={4}></textarea>
+              <textarea className="w-full border border-gray-200 rounded px-3 py-2" placeholder="Brief description" rows={4}></textarea>
               <div className="flex gap-3">
-                <button className="bg-[#4B5D3A] text-white px-4 py-2 rounded">Send</button>
-                <button type="button" className="border border-gray-300 px-4 py-2 rounded" onClick={() => window.open('mailto:youremail@example.com')}>Email Instead</button>
+                <button className="btn-gold" type="submit">Send</button>
+                <a href="mailto:youremail@example.com" className="inline-block px-4 py-2 rounded-md border border-gray-200 text-sm text-gray-700">Email Instead</a>
               </div>
             </form>
+          </aside>
+        </section>
+
+        {/* ABOUT */}
+        <section id="about" className="mt-16 fade-up" style={{animationDelay: '320ms'}}>
+          <div className="bg-brand-pale rounded-2xl p-10">
+            <h2 className="text-2xl font-serif text-brand-green">About J. Steven Southwell, P.A.</h2>
+            <p className="text-gray-700 mt-3 max-w-3xl">
+              Southwell Law provides strategic counsel and hands-on representation in real estate matters — from residential closings and title review to commercial transactions, leases, and dispute resolution. Our aim is clear: protect your property interests and close deals efficiently.
+            </p>
           </div>
         </section>
 
-        {/* About */}
-        <section id="about" className="mt-14 bg-white rounded-lg shadow p-8">
-          <h3 className="text-2xl font-semibold">About Southwell Law</h3>
-          <p className="mt-3 text-gray-700">With decades of combined experience in real estate law, Southwell Law advises buyers, sellers, landlords, tenants, lenders, and developers. We focus on minimizing risk, closing deals efficiently, and protecting your interests at every step.</p>
-
-          <div className="mt-6 grid md:grid-cols-3 gap-4">
-            <div className="p-4 border border-gray-100 rounded">
-              <h4 className="font-semibold">Residential Transactions</h4>
-              <p className="text-sm text-gray-600 mt-1">Closings, title review, contract negotiation.</p>
-            </div>
-            <div className="p-4 border border-gray-100 rounded">
-              <h4 className="font-semibold">Commercial Real Estate</h4>
-              <p className="text-sm text-gray-600 mt-1">Leases, purchase agreements, due diligence.</p>
-            </div>
-            <div className="p-4 border border-gray-100 rounded">
-              <h4 className="font-semibold">Litigation & Disputes</h4>
-              <p className="text-sm text-gray-600 mt-1">Boundary, title defects, landlord-tenant conflicts.</p>
-            </div>
+        {/* SERVICES */}
+        <section id="services" className="mt-10 grid md:grid-cols-3 gap-6">
+          <div className="bg-white p-6 rounded-xl-soft shadow-soft border border-gray-100">
+            <h4 className="font-semibold text-gray-900">Purchases & Sales</h4>
+            <p className="text-sm text-gray-600 mt-2">Contract drafting, negotiation, closing coordination, and title review.</p>
+          </div>
+          <div className="bg-white p-6 rounded-xl-soft shadow-soft border border-gray-100">
+            <h4 className="font-semibold text-gray-900">Leases & Land Use</h4>
+            <p className="text-sm text-gray-600 mt-2">Commercial & residential lease drafting, zoning, and land use counsel.</p>
+          </div>
+          <div className="bg-white p-6 rounded-xl-soft shadow-soft border border-gray-100">
+            <h4 className="font-semibold text-gray-900">Disputes & Litigation</h4>
+            <p className="text-sm text-gray-600 mt-2">Title defects, boundary disputes, landlord-tenant conflicts, and negotiation/mediation.</p>
           </div>
         </section>
 
-        {/* Services */}
-        <section id="services" className="mt-10">
-          <h3 className="text-xl font-semibold">Services</h3>
-          <div className="mt-4 grid md:grid-cols-2 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h4 className="font-semibold">Purchases & Sales</h4>
-              <p className="text-sm text-gray-600 mt-2">Contract drafting and review, negotiation, closing coordination, title review.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h4 className="font-semibold">Title & Escrow</h4>
-              <p className="text-sm text-gray-600 mt-2">Title searches, cure, insurance recommendations, escrow coordination.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h4 className="font-semibold">Lease Drafting & Review</h4>
-              <p className="text-sm text-gray-600 mt-2">Commercial and residential lease agreements.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h4 className="font-semibold">Dispute Resolution</h4>
-              <p className="text-sm text-gray-600 mt-2">Mediation, negotiation, litigation support.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonials */}
-        <section id="testimonials" className="mt-10">
-          <h3 className="text-xl font-semibold">What Clients Say</h3>
+        {/* TESTIMONIALS */}
+        <section id="testimonials" className="mt-12">
+          <h3 className="text-lg font-serif text-gray-900">What Clients Say</h3>
           <div className="mt-4 grid md:grid-cols-3 gap-4">
-            <blockquote className="bg-white p-4 rounded shadow">“Professional and straightforward — made closing painless.”</blockquote>
-            <blockquote className="bg-white p-4 rounded shadow">“Saved us time and money on a tricky commercial lease.”</blockquote>
-            <blockquote className="bg-white p-4 rounded shadow">“Responsive and clear communication throughout.”</blockquote>
+            <blockquote className="bg-white p-6 rounded-xl-soft shadow-sm border border-gray-50">
+              “Professional, clear, and efficient — helped us close on a difficult property quickly.”
+            </blockquote>
+            <blockquote className="bg-white p-6 rounded-xl-soft shadow-sm border border-gray-50">
+              “Saved us time and money during a complex commercial lease negotiation.”
+            </blockquote>
+            <blockquote className="bg-white p-6 rounded-xl-soft shadow-sm border border-gray-50">
+              “Responsive and reliable counsel throughout the transaction.”
+            </blockquote>
           </div>
         </section>
 
-        {/* Contact */}
-        <section id="contact" className="mt-10 bg-white rounded-lg shadow p-8">
-          <h3 className="text-2xl font-semibold">Contact</h3>
-          <p className="text-sm text-gray-600 mt-2">Call or email to schedule a consultation.</p>
-
-          <div className="mt-6 grid md:grid-cols-2 gap-6">
+        {/* CONTACT */}
+        <section id="contact" className="mt-12 bg-white p-8 rounded-xl-soft border border-gray-100">
+          <div className="md:flex md:items-center md:justify-between">
             <div>
-              <h4 className="font-semibold">Office</h4>
-              <p className="text-sm text-gray-700">123 Main Street<br/>Wauchula, FL 33873</p>
-              <p className="mt-3 text-sm">Phone: (554) 555-5555<br/>Email: <a href="mailto:youremail@example.com" className="text-[#4B5D3A] underline">youremail@example.com</a></p>
+              <h4 className="text-xl font-serif">Contact</h4>
+              <p className="text-sm text-gray-600 mt-2">Phone: (555) 555-5555 • Email: <a className="underline text-brand-olive" href="mailto:youremail@example.com">youremail@example.com</a></p>
             </div>
-            <div>
-              <h4 className="font-semibold">Hours</h4>
-              <p className="text-sm text-gray-700">Mon — Fri: 9:00 AM — 5:00 PM<br/>By appointment evenings/weekends</p>
-
-              <div className="mt-4">
-                <iframe title="map" src="https://www.google.com/maps?q=Wauchula,+FL&output=embed" className="w-full h-44 rounded border-0" />
-              </div>
+            <div className="mt-6 md:mt-0">
+              <a href="tel:5555555555" className="inline-block px-4 py-2 rounded-md border border-gray-200">Call Office</a>
+              <a href="#contact" className="ml-3 btn-gold">Request Consultation</a>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="bg-[#2F3D2B] text-gray-200 py-6 mt-12">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-sm">© {new Date().getFullYear()} Southwell Law. All rights reserved.</div>
+      {/* FOOTER */}
+      <footer className="bg-brand-green text-white mt-16 py-8">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="text-sm">© {new Date().getFullYear()} J. Steven Southwell, P.A.</div>
           <div className="text-sm">Licensed in Florida • Privacy Policy</div>
         </div>
       </footer>
